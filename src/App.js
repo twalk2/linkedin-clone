@@ -49,4 +49,6 @@ function App() {
   );
 }
 
+// App.js page
+
 export default App;
