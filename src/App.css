@@ -44,29 +44,68 @@ form {
 }
 
 form input {
-  height: 52px;
+  height: 16px;
   width: 375px;
-  font-size: 1.2rem;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.6);
   margin-bottom: 12px;
-  padding: 0 0 0 6px;
+  padding: 28px 12px 6px 12px;
+  font-size: 1.2rem;
 }
 
-form input::placeholder {
+.input-wrapper {
+  position: relative;
+}
+
+.floating-label {
   color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  pointer-events: none;
+  top: 15px;
+  left: 15px;
+  transition: 0.2s ease all;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.6);
+  transition: 0.3s ease all;
+}
+
+.show-button {
+  position: absolute;
+  top: 3px;
+  left: 340px;
+  color: #0073b1;
+  width: 54px;
+  height: 24px;
+  font-size: 0.9em;
+  background-color: transparent;
+  outline: none;
+}
+
+.show-button:hover {
+  background-color: rgba(152, 216, 244, 0.25);
+}
+
+.input-wrapper input:focus ~ .floating-label,
+.input-wrapper input:not(:focus):valid ~ .floating-label {
+  font-size: 0.9rem;
+  top: 3px;
+  left: 10px;
 }
 
 form input:focus {
+  align-items: flex-end;
   outline: none;
+  font-size: 1.2rem;
+  border-color: #0073b1;
+  box-shadow: 0 0 0 1px #0073b1;
 }
 
 form button {
   margin-top: 12px;
   height: 52px;
-  width: 384px;
+  width: 401px;
   background-color: #0073b1;
   color: #fff;
   font-size: 1rem;
@@ -113,7 +152,7 @@ form button:hover {
 }
 
 #join:hover {
-  color: #544bc2;
+  color: #006097;
 }
 
 .footer {
